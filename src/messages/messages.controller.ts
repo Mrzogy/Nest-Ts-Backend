@@ -14,7 +14,8 @@ export class MessagesController {
     }
 
     @Get('/:id')
-    getMessage() {
-
+    getMessage(@Param('id') id:string) {
+        console.log(id);
+        
     }
 }
