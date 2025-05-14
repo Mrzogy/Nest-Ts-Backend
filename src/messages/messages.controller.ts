@@ -4,9 +4,9 @@ import { MessagessService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
-    messageService: MessagessService;
-    constructor(){
-        this.messageService = new MessagessService();
+
+    constructor(public messageService: MessagessService) {
+
     }
     @Get()
     listMessages() {
@@ -15,7 +15,7 @@ export class MessagesController {
 
     @Post()
     createMessage(@Body() body: createMessageDto) {
-       return this.messageService.create(body.content);
+        return this.messageService.create(body.content);
     }
 
     @Get('/:id')
